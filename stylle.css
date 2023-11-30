@@ -15,4 +15,35 @@ body {
   stroke: #fff;
   stroke-width: 4px;
   stroke-linecap: round;
+}
+
+.game-data {
+  width: 300px;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  border: 2px solid #fff;
+  border-radius: 5px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.game-frame {
+  width: 250px;
+  height: 50px;
+  background-color: #373737;
+  border-radius: 5px;
+  margin: 10px;
+  position: relative;
+}
+.game-frame h4 {
+  position: absolute;
+  top: 4px;
+  left: 10px;
+  margin: 0;
 }/*# sourceMappingURL=stylle.css.map */

@@ -20,6 +20,11 @@ const colors= [
 ];
 const tituloEl = document.getElementById('titulo');
 const letras= tituloEl.textContent.split('');
+if(letras.includes('x ')){
+    console.log('incluida')
+}else{
+    console.log('no incluida')
+};
 tituloEl.innerHTML=letras
     .map((letra,i)=>`<span style='color: ${colors[i%colors.length]}'>${letra}</span>`)
     .join('');

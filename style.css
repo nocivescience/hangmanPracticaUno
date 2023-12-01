@@ -67,6 +67,9 @@ h1 {
 }
 
 @media screen and (max-width: 600px) {
+  body{
+    background-color: rgb(0, 157, 157);
+  }
   .game-container {
     height: 400px;
     width: 350px;
@@ -78,6 +81,9 @@ h1 {
 }
 
 @media screen and (max-width: 300px) {
+  body{
+    background-color: rgb(0, 102, 255);
+  }
   body > :first-child{
     font-size: 20px;
   }

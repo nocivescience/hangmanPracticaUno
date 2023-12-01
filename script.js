@@ -4,7 +4,6 @@ const playAgainBtn = document.getElementById('play-button');
 const popup = document.getElementById('popup-container');
 const notification = document.getElementById('notification-container');
 const finalMessage = document.getElementById('final-message');
-
 const figureParts = document.querySelectorAll('.figure-part');
 
 const words = ['application', 'programming', 'interface', 'wizard'];
@@ -13,15 +12,35 @@ let selectedWord = words[Math.floor(Math.random() * words.length)];
 
 const correctLetters = [];
 const wrongLetters = [];
-
+const colors= [
+    'red',
+    'green',
+    'yellow',
+    'orange',
+];
+const tituloEl = document.getElementById('titulo');
+const letras= tituloEl.textContent.split('');
+tituloEl.innerHTML=letras
+    .map((letra,i)=>`<span style='color: ${colors[i%colors.length]}'>${letra}</span>`)
+    .join('');
 // Show hidden word
+const TITULOEL= document.getElementById('TITULO');
+const LETRAS= TITULOEL.textContent.split('');
+TITULOEL.innerHTML=
+    LETRAS
+    .map((letras,i)=>
+        `<span style='color: ${colors[i%colors.length]}'>${letras}</span>`
+    ).join('');
 function displayWord() {
+  const color = colors[Math.floor(Math.random() * colors.length)]
   wordEl.innerHTML = `
     ${selectedWord
       .split('')
       .map(
         letter => `
-          <span class="letter">
+          <span class="letter"
+            style="background-color: ${color}; border-radius: 5px; opacity: 0.3;"
+          >
             ${correctLetters.includes(letter) ? letter : ''}
           </span>
         `
@@ -29,7 +48,7 @@ function displayWord() {
       .join('')}
   `;
 
-  const innerWord = wordEl.innerText.replace(/\n/g, '');
+  const innerWord = wordEl.innerText.replace('/\n/g', '');
 
   if (innerWord === selectedWord) {
     finalMessage.innerText = 'Congratulations! You won! 😃';

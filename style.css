@@ -24,6 +24,10 @@ h1 {
   margin: auto;
   height: 350px;
   width: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .figure-container {
@@ -60,6 +64,39 @@ h1 {
   bottom: 10px;
   left: 50%;
   transform: translateX(-50%);
+}
+
+@media screen and (max-width: 600px) {
+  .game-container {
+    height: 400px;
+    width: 350px;
+    margin: 0;
+  }
+  .game-container .word{
+    bottom: 0;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  body > :first-child{
+    font-size: 20px;
+  }
+  body>:nth-child(2){
+    font-size: 17px;
+    flex-wrap: wrap;
+    text-align: center;
+  }
+  .game-container {
+    height: 300px;
+    width: 250px;
+    margin: 0;
+  }
+  .game-container .word{
+    bottom: 0;
+  }
+  .game-container .word{
+    width: 200px;
+  }
 }
 
 .letter {

@@ -9,3 +9,14 @@ let selectedWord=words[Math.floor(Math.random()*words.length)];
 const correctLetters=[];
 const wrongLetters=[];
 // show hidden word
+function displayWord(){
+    wordEl.innerHTML=`
+    ${selectedWord
+        .split('')
+        .map(letter=>`
+            <span class="letter">
+                ${correctLetters.includes(letter)?letter:''}
+            </span>
+        `).join('')}
+    `;
+} 
